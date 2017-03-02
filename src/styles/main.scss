@@ -1,3 +1,19 @@
 *{
 	box-sizing: border-box;
 }
+
+#app-container{
+  font-size: 0;
+}
+
+.peeps{
+  font-size: 11px;
+  background-color: #d4f1c7;
+  margin: 10px;
+  width: 30%;
+}
+
+img {
+   width: 100%;
+   display: block;
+}

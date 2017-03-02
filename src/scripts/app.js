@@ -29,23 +29,33 @@ const SingleCongressPeepsProfile = React.createClass({
       return (
 
         <div>
-          <h3> firstName  lastName  </h3>
-          <h4> title  --  party - stateName </h4>
-          <ul>'
-            <li> email: email </li>
-            <li> website: website </li>
-            <li> facebook: facebook </li>
-            <li> twitter: twitter </li>
+          <h3> {peepsObj.first_name} {peepsObj.last_name} </h3>
+          <h4> {peepsObj.title} -- {peepsObj.party} - {peepsObj.state_name} </h4>
+          <ul>
+            <li> email: {peepsObj.oc_email} </li>
+            <li> website: {peepsObj.website} </li>
+            <li> facebook: {peepsObj.facebook_id} </li>
+            <li> twitter: {peepsObj.twitter_id} </li>
           </ul>
-          <p>Term End + termEnd </p>
+          <p>Term End {peepsObj.term_end} </p>
         </div>
 
       )
 
     })
-  }
-})
+    return jsxArr
+  },
 
+  render: function(){
+    let congressPeepsList = this.props.someCongressPeeps;
+    return (
+      <div>
+        {this._createSingleCongressPeepsJSX(congressPeepsList)}
+      </div>
+    )
+  }
+
+})
 
 
 $.getJSON('https://congress.api.sunlightfoundation.com/legislators?callback=?').then(function(serverRes){
