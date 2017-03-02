@@ -25,7 +25,7 @@ const SingleCongressPeepsProfile = React.createClass({
     let jsxArr = arrOfPeeps.map(function(peepsObj){
       return (
 
-        <div>
+        <div className='peeps'>
           <h3> {peepsObj.first_name} {peepsObj.last_name} </h3>
           <h4> {peepsObj.title} -- {peepsObj.party} - {peepsObj.state_name} </h4>
           <ul>
@@ -45,7 +45,9 @@ const SingleCongressPeepsProfile = React.createClass({
   render: function(){
     let congressPeepsList = this.props.someCongressPeeps;
     return (
-      {this._createSingleCongressPeepsJSX(congressPeepsList)}
+      <div>
+      { this._createSingleCongressPeepsJSX(congressPeepsList) }
+      </div>
     )
   }
 })
