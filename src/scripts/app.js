@@ -11,12 +11,9 @@ const CongressPeepsProps = React.createClass({
 
     return (
       <div>
-        <p>  Yoooooo!!! </p>
         <SingleCongressPeepsProfile someCongressPeeps={this.props.congressPeeps.results}/>
         {/* map over data and insert single CongressPeeps template here, then return the single CongressPeeps template */}
-
       </div>
-
     )
   }
 })
@@ -41,7 +38,6 @@ const SingleCongressPeepsProfile = React.createClass({
         </div>
 
       )
-
     })
     return jsxArr
   },
@@ -49,12 +45,9 @@ const SingleCongressPeepsProfile = React.createClass({
   render: function(){
     let congressPeepsList = this.props.someCongressPeeps;
     return (
-      <div>
-        {this._createSingleCongressPeepsJSX(congressPeepsList)}
-      </div>
+      {this._createSingleCongressPeepsJSX(congressPeepsList)}
     )
   }
-
 })
 
 
